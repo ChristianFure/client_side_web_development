@@ -58,3 +58,27 @@ console.log(zoo.animals)
 document.getElementById("name").innerHTML = zoo.name
 document.getElementById("capacity").innerHTML = zoo.capacity
 document.getElementById("numberOfGuests").innerHTML = zoo.numberOfGuests
+
+document.getElementById("perryType").innerHTML = perry.type
+document.getElementById("perryAge").innerHTML = perry.age
+document.getElementById("perryGender").innerHTML = perry.gender
+document.getElementById("perryWeight").innerHTML = perry.weight
+document.getElementById("perryIsPregnant").innerHTML = perry.isPregnant ? 'Pregnant' : 'Not Pregnant'
+
+document.getElementById("harryType").innerHTML = harry.type
+document.getElementById("harryAge").innerHTML = harry.age
+document.getElementById("harryGender").innerHTML = harry.gender
+document.getElementById("harryWeight").innerHTML = harry.weight
+document.getElementById("harryIsPregnant").innerHTML = harry.isPregnant ? 'Pregnant' : 'Not Pregnant'
+
+document.getElementById("sherryType").innerHTML = sherry.type
+document.getElementById("sherryAge").innerHTML = sherry.age
+document.getElementById("sherryGender").innerHTML = sherry.gender
+document.getElementById("sherryWeight").innerHTML = sherry.weight
+document.getElementById("sherryIsPregnant").innerHTML = sherry.isPregnant ? 'Pregnant' : 'Not Pregnant'
+
+document.getElementById("cherryType").innerHTML = cherry.type
+document.getElementById("cherryAge").innerHTML = cherry.age
+document.getElementById("cherryGender").innerHTML = cherry.gender
+document.getElementById("cherryWeight").innerHTML = cherry.weight
+document.getElementById("cherryIsPregnant").innerHTML = cherry.isPregnant ? 'Pregnant' : 'Not Pregnant'
