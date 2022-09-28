@@ -42,43 +42,55 @@ const cherry = {
     "isPregnant": true
 }
 
-console.log(zoo);
-console.log(perry);
-console.log(harry);
-console.log(sherry);
-console.log(cherry);
-
 zoo.animals.push(perry);
 zoo.animals.push(harry);
 zoo.animals.push(sherry);
 zoo.animals.push(cherry);
 
-console.log(zoo.animals)
+const mainElement = document.getElementById("bodyDiv1")
 
-document.getElementById("name").innerHTML = zoo.name
-document.getElementById("capacity").innerHTML = zoo.capacity
-document.getElementById("numberOfGuests").innerHTML = zoo.numberOfGuests
+// document.getElementById("name").innerHTML = zoo.name
+const nameH1 = document.createElement("h1")
+const nameNode = document.createTextNode(zoo.name)
+nameH1.appendChild(nameNode)
+mainElement.appendChild(nameH1)
 
-document.getElementById("perryType").innerHTML = perry.type
-document.getElementById("perryAge").innerHTML = perry.age
-document.getElementById("perryGender").innerHTML = perry.gender
-document.getElementById("perryWeight").innerHTML = perry.weight
-document.getElementById("perryIsPregnant").innerHTML = perry.isPregnant ? 'Pregnant' : 'Not Pregnant'
+// document.getElementById("capacity").innerHTML = zoo.capacity
+const capacityH3 = document.createElement("h3")
+const capacityNode = document.createTextNode(`Capacity: ${zoo.capacity}`)
+capacityH3.appendChild(capacityNode)
+mainElement.appendChild(capacityH3)
 
-document.getElementById("harryType").innerHTML = harry.type
-document.getElementById("harryAge").innerHTML = harry.age
-document.getElementById("harryGender").innerHTML = harry.gender
-document.getElementById("harryWeight").innerHTML = harry.weight
-document.getElementById("harryIsPregnant").innerHTML = harry.isPregnant ? 'Pregnant' : 'Not Pregnant'
+// document.getElementById("numberOfGuests").innerHTML = zoo.numberOfGuests
+const numberOfGuestsH3 = document.createElement("h3")
+const numberOfGuestsNode = document.createTextNode(`Number Of Guests: ${zoo.numberOfGuests}`)
+numberOfGuestsH3.appendChild(numberOfGuestsNode)
+mainElement.appendChild(numberOfGuestsH3)
 
-document.getElementById("sherryType").innerHTML = sherry.type
-document.getElementById("sherryAge").innerHTML = sherry.age
-document.getElementById("sherryGender").innerHTML = sherry.gender
-document.getElementById("sherryWeight").innerHTML = sherry.weight
-document.getElementById("sherryIsPregnant").innerHTML = sherry.isPregnant ? 'Pregnant' : 'Not Pregnant'
+// This function will be called as soon as the html page starts to load
+function onLoad() {
+    // These variables get the table which is already created and it creates a body for the table.
+    const animalsTable = document.getElementById("animalsTable")
+    const tableBody = document.createElement("tbody")
 
-document.getElementById("cherryType").innerHTML = cherry.type
-document.getElementById("cherryAge").innerHTML = cherry.age
-document.getElementById("cherryGender").innerHTML = cherry.gender
-document.getElementById("cherryWeight").innerHTML = cherry.weight
-document.getElementById("cherryIsPregnant").innerHTML = cherry.isPregnant ? 'Pregnant' : 'Not Pregnant'
+    // This for loop iterates through every animal in the zoo. This makes it so you can have as many animals you want in the zoo without touching the code.
+    for (let i = 0; i < zoo.animals.length; i++) {
+        const row = document.createElement("tr")
+
+        const keys = Object.keys(zoo.animals[i])
+
+        // This for loop iterates through the keys of the animal object and populates the table row.
+        for (let u = 0; u < keys.length; u++) {
+            const cell = document.createElement("td")
+            const cellText = document.createTextNode(zoo.animals[i][keys[u]])
+            cell.appendChild(cellText)
+            row.appendChild(cell)
+        }
+
+        // This adds the row to the table.
+        tableBody.appendChild(row)
+    }
+    // This adds the table body to the animals table. Without this the table would be just headings.
+    animalsTable.appendChild(tableBody)
+}
+
