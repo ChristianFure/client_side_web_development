@@ -29,6 +29,31 @@
             </tr>
         </table>
     </div>
+
+    <div>
+        <select name="animals" id="animalsListBox" onchange="onAnimalsListBoxChange()">
+                
+        </select>
+        <button onclick="onDeleteAnimal()">Delete</button>
+        <button onclick="onAddAnimal()">Add Animal</button>
+    </div>
+
+    <div>
+        <form action="post" id="animalsForm">
+            <label for="animalsFormName">Name:</label>
+            <input type="text" id="animalsFormName" name="animalsFormName" onchange="onInputChange()">
+            <label for="animalsFormType">Type:</label>
+            <input type="text" id="animalsFormType" name="animalsFormType" onchange="onInputChange()">
+            <label for="animalsFormAge">Age:</label>
+            <input type="number" id="animalsFormAge" name="animalsFormAge" onchange="onInputChange()">
+            <label for="animalsFormGender">Gender:</label>
+            <input type="text" id="animalsFormGender" name="animalsFormGender" onchange="onInputChange()">
+            <label for="animalsFormWeight">Weight:</label>
+            <input type="number" id="animalsFormWeight" name="animalsFormWeight" onchange="onInputChange()">
+            <label for="animalsFormIsPregnant">Is Pregnant:</label>
+            <input type="text" id="animalsFormIsPregnant" name="animalsFormIsPregnant" onchange="onInputChange()">
+        </form>
+    </div>
 </body>
 
 </html>
