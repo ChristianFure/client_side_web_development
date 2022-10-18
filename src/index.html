@@ -17,28 +17,39 @@
 
     </div>
 
+    <div class="zooForm">
+        <Button onclick="admitGuest()">Admit Guest</Button>
+        <form action="">
+            <label for="zooNameField">Name</label>
+            <input type="text" name="zooNameField" id="zooNameField" class="zooField">
+            <label for="zooCapacityField">Capacity</label>
+            <input type="text" name="zooCapacityField" id="zooCapacityField" class="zooField">
+            <label for="zooNumOfAnimalsField">Number of Animals</label>
+            <input type="text" name="zooNumOfAnimalsField" id="zooNumOfAnimalsField" class="zooField">
+            <label for="zooNumOfGuestsField">Number of Guests</label>
+            <input type="text" name="zooNumOfGuestsField" id="zooNumOfGuestsField" class="zooField">
+        </form>
+    </div>
+
     <div>
         <select name="animals" id="animalsListBox" onchange="onAnimalsListBoxChange()">
                 
         </select>
         <button onclick="onDeleteAnimal()">Delete</button>
         <button onclick="onAddAnimal()">Add Animal</button>
-    </div>
-
-    <div>
         <form action="post" id="animalsForm">
             <label for="animalsFormName">Name:</label>
-            <input type="text" id="animalsFormName" name="animalsFormName" onchange="onInputChange()">
+            <input type="text" id="animalsFormName" name="animalsFormName" onchange="onAnimalInputChange()">
             <label for="animalsFormType">Type:</label>
-            <input type="text" id="animalsFormType" name="animalsFormType" onchange="onInputChange()">
+            <input type="text" id="animalsFormType" name="animalsFormType" onchange="onAnimalInputChange()">
             <label for="animalsFormAge">Age:</label>
-            <input type="number" id="animalsFormAge" name="animalsFormAge" onchange="onInputChange()">
+            <input type="number" id="animalsFormAge" name="animalsFormAge" onchange="onAnimalInputChange()">
             <label for="animalsFormGender">Gender:</label>
-            <input type="text" id="animalsFormGender" name="animalsFormGender" onchange="onInputChange()">
+            <input type="text" id="animalsFormGender" name="animalsFormGender" onchange="onAnimalInputChange()">
             <label for="animalsFormWeight">Weight:</label>
-            <input type="number" id="animalsFormWeight" name="animalsFormWeight" onchange="onInputChange()">
+            <input type="number" id="animalsFormWeight" name="animalsFormWeight" onchange="onAnimalInputChange()">
             <label for="animalsFormIsPregnant">Is Pregnant:</label>
-            <input type="text" id="animalsFormIsPregnant" name="animalsFormIsPregnant" onchange="onInputChange()">
+            <input type="text" id="animalsFormIsPregnant" name="animalsFormIsPregnant" onchange="onAnimalInputChange()">
         </form>
     </div>
 </body>

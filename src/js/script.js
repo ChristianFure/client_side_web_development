@@ -65,6 +65,7 @@ mainElement.appendChild(capacityH3)
 // document.getElementById("numberOfGuests").innerHTML = zoo.numberOfGuests
 const numberOfGuestsH3 = document.createElement("h3")
 const numberOfGuestsNode = document.createTextNode(`Number Of Guests: ${zoo.numberOfGuests}`)
+numberOfGuestsH3.setAttribute("id", "numberOfGuests")
 numberOfGuestsH3.appendChild(numberOfGuestsNode)
 mainElement.appendChild(numberOfGuestsH3)
 
@@ -76,6 +77,7 @@ mainElement.appendChild(numberOfAnimalsH3)
 
 // This function will be called as soon as the html page starts to load
 function onLoad() {
+    
     // This for loop iterates through every animal in the zoo. This makes it so you can have as many animals you want in the zoo without touching the code.
     for (let i = 0; i < zoo.animals.length; i++) {
         // This for loop iterates through the keys of the animal object and populates the table row.
@@ -86,6 +88,7 @@ function onLoad() {
         cell.appendChild(cellText)
         listBox.appendChild(cell)
     }
+    onZooLoad()
 }
 
 function onAnimalsListBoxChange() {
@@ -105,7 +108,39 @@ function onAnimalsListBoxChange() {
     }
 }
 
-function onInputChange() {
+function onAnimalInputChange() {
+    const list = document.getElementById("animalsListBox")
+    const idx = list.selectedIndex
+    const animalName = list[idx].value
+
+    const animal = zoo.animals.find(element => element['name'] == animalName)
+
+    if (animal != null) {
+        animal['name'] = document.getElementById('animalsFormName').value
+        animal['type'] = document.getElementById('animalsFormType').value
+        animal['age'] = document.getElementById('animalsFormAge').value
+        animal['gender'] = document.getElementById('animalsFormGender').value 
+        animal['weight'] = document.getElementById('animalsFormWeight').value
+        animal['isPregnant'] = document.getElementById('animalsFormIsPregnant').value
+    }
+}
+
+function onZooLoad() {
+    // if (zoo != null) {
+        document.getElementById('zooNameField').value = zoo['name']
+        document.getElementById('zooCapacityField').value = zoo['capacity']
+        document.getElementById('zooNumOfAnimalsField').value = zoo['animals'].length
+        document.getElementById('zooNumOfGuestsField').value = zoo['numberOfGuests']
+    // }
+}
+
+function admitGuest() {
+    zoo.numberOfGuests++;
+    document.getElementById('numberOfGuests').innerText = `Number Of Guests: ${zoo.numberOfGuests}`
+    document.getElementById('zooNumOfAnimalsField').value = zoo['numberOfGuests']
+}
+
+function onZooInputChange() {
     const list = document.getElementById("animalsListBox")
     const idx = list.selectedIndex
     const animalName = list[idx].value

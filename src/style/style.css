@@ -5,3 +5,10 @@ table, th, td {
   table {
     width: 50%;
   }
+
+.zooField {
+  border: 1px solid grey;
+}
+
+.zooForm {
+} 
