@@ -10,6 +10,9 @@
     <script src="./js/script.js" async>
 
     </script>
+    <script  src="./js/Handlers.js">
+    </script>
+    <script src="./js/Animal.js"> </script>
 </head>
 
 <body onload="onLoad()">
@@ -37,6 +40,8 @@
         </select>
         <button onclick="onDeleteAnimal()">Delete</button>
         <button onclick="onAddAnimal()">Add Animal</button>
+        <button onclick="makePregnant()">Make Pregnant</button>
+        <button onclick="birthAnimal()">Birth Animal</button>
         <form action="post" id="animalsForm">
             <label for="animalsFormName">Name:</label>
             <input type="text" id="animalsFormName" name="animalsFormName" onchange="onAnimalInputChange()">
