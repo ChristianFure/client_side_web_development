@@ -7,12 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css">
-    <script type="text/javascript" src="./js/script.js" async>
-    
+    <script type="module" async>
+        import { onLoad, onZooLoad, onZooInputChange, onAnimalsListBoxChange, onAnimalInputChange, onDeleteAnimal, onAddAnimal, validateAnimalsForm } from './js/script.js'
+        import { admitGuest } from './js/Zoo.js'
+        import { makePregnant, birthAnimal } from './js/Animal.js'
+        onLoad();
+        onZooLoad();
+        onAnimalsListBoxChange();
+        onAnimalInputChange();
+        onDeleteAnimal();
+        onAddAnimal();
+        validateAnimalsForm();
+        admitGuest();
+        makePregnant();
+        birthAnimal();
     </script>
-    <script type="text/javascript" src="./js/Handlers.js" async>
-    </script>
-    <script type="text/javascript" src="./js/Animal.js" async></script>
 </head>
 
 <body onload="onLoad()">
